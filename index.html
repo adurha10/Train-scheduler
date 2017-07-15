@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Normalize CSS from Meyerweb -->
+	<link rel="stylesheet" href="assets/css/reset.css">
+	
+	<!-- BOOTSTRAP - Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- BOOTSTRAP - Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Site Style CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	
+	<meta charset="UTF-8">
+	<title>Train Scheduler</title>
+</head>
+<body>
+	<!-- HTML for page layout goes here -->
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron text-center bg-inverse text-white"><h1>I Hear That Train A Rollin'</h1><br><p>Current Time: </p><span id="current-time"></span></div>
+		</div>
+		<div class="row">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Current Train Schedule</div>
+				<div class="panel-body">	
+					<table class="table table-stripped">
+						<thead>
+							<tr>
+								<th> Train Name </th>
+								<th> Destination </th>
+								<th> First Train Today </th>
+								<th> Frequency </th>
+								<th> Next Arrival </th>
+								<th> Minutes Away </th>
+							</tr>
+						</thead>
+						<tbody id="train-container">
+						
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Add Train</div>
+					<div class="panel-body">
+						<form class="form-group" id="add-train">
+							<label for="train-name">Train Name</label>
+		   	 				<input type="text" class="form-control" id="train-name" name="nameForm" placeholder="Orient Express">
+							<label for="train-dest">Destination</label>
+		   	 				<input type="text" class="form-control" id="train-dest" name="destForm" placeholder="Denver">
+							<label for="train-start">First Train Today (HH:MM - Military Time)</label>
+		   	 				<input type="text" class="form-control" id="train-start" name="startForm" placeholder="21:30">
+							<label for="train-freq">Frequency (In Minutes)</label>
+		   	 				<input type="text" class="form-control" id="train-freq" name="freqForm" placeholder="60">
+		   	 				<br>
+							<button type="submit" class="btn btn-primary" id="data-submit">Submit</button>	
+							<div id="error-container"></div>
+						</form>
+						<!-- <form class="form-group">
+						</form>
+						<form class="form-group">
+						</form>
+						<form class="form-group">
+						</form>
+						<form class="form-group">
+						</form> -->
+					</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- Javascript after all HTML elements so document is ready -->
+	<!-- jQuery CDN -->	
+	<script
+  		src="https://code.jquery.com/jquery-3.1.1.js"
+  		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  		crossorigin="anonymous">
+	</script>
+	<script src="assets/javascript/moment.js"></script>
+	<!-- BOOTSTRAP - Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- FIREBASE -->
+	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+	<!-- jQuery form validation-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>	
+	<!-- aditional-methods.js for form validation-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.js"></script>	
+	<!-- Link to Project Javascript file with Firebase -->
+	<script src="assets/javascript/logic.js"></script>
+</body>
+</html>

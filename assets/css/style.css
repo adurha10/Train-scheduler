@@ -1,0 +1,9 @@
+.jumbotron{
+	background-color: black;
+	color: white;
+}
+
+label.error{
+    display: block;
+    color: red;
+}
